@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!-- namespace等于mapper接口类的全限定名,这样实现对应 -->
+<!-- mapper接口不能重载 -->
+<mapper namespace="com.sky.mapper.DishMapper">
+
+<!--
+    这里我来解释一下，首先口味和菜品是通过id绑定关系的，
+    所以口味表有dish_id需要填写，
+    所以在添加菜品是需要记录在数据库添加数据的id，并赋值给id字段，
+    以便在插入口味表里的dish_id。
+-->
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        insert into dish (name, category_id, price, image, description, create_time, update_time, create_user, update_user , status)
+            values
+        (#{name} , #{categoryId} , #{price} , #{image} , #{description} , #{createTime} , #{updateTime} , #{createUser} , #{updateUser} , #{status})
+    </insert>
+</mapper>
