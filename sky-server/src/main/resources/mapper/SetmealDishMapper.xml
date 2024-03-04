@@ -5,7 +5,14 @@
 <!-- namespace等于mapper接口类的全限定名,这样实现对应 -->
 <!-- mapper接口不能重载 -->
 <mapper namespace="com.sky.mapper.SetmealDishMapper">
-
+    <insert id="insertBatch">
+        insert into setmeal_dish
+        (setmeal_id, dish_id, name, price, copies)
+        VALUES
+        <foreach collection="setmealDishes" item="sd" separator="," open="(" close=")">
+            #{sd.setmealId},#{sd.dishId},#{sd.name},#{sd.price},#{sd.copies}
+        </foreach>
+    </insert>
 
     <select id="getSetmealIds" resultType="java.lang.Long">
         select setmeal_id from setmeal_dish where dish_id in
