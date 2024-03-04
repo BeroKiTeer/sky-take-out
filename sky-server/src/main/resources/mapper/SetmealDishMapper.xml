@@ -20,4 +20,7 @@
             #{dishId}
         </foreach>
     </select>
+    <select id="getSetmealId" resultType="com.sky.entity.SetmealDish">
+        select setmeal_id from setmeal_dish where dish_id = #{dishId}
+    </select>
 </mapper>
