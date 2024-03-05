@@ -11,3 +11,8 @@ sky:
     access-key-id: LTAI5tHpbvq3UKtDK3mjQ9Kd
     access-key-secret: 92PHuBnHWJXtcjwNWk2BoqZo88qAK8
     bucket-name: jincangshu
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: 123456
+    database: 10
