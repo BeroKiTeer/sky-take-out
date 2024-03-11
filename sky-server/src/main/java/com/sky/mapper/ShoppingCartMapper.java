@@ -37,4 +37,12 @@ public interface ShoppingCartMapper {
      */
     @Delete("delete from shopping_cart where user_id = #{currentId}")
     void deleteByUserId(Long currentId);
+
+    /**
+     *
+     * @param shoppingCart
+     */
+    void sub(ShoppingCart shoppingCart);
+
+    void deleteByUserIdAndDishId(ShoppingCart shoppingCart);
 }
