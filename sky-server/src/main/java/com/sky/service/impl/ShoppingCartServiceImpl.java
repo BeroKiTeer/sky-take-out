@@ -74,6 +74,15 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
         return list;
     }
 
+    /**
+     * 删除购物车中的菜品或套餐
+     */
+    @Override
+    public void deleteAll() {
+        Long currentId = BaseContext.getCurrentId();//获取到当前用户的id
+        shoppingCartMapper.deleteByUserId(currentId);
+    }
+
     @Autowired
     private ShoppingCartMapper shoppingCartMapper;
     @Autowired
