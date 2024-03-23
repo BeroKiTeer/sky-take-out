@@ -8,7 +8,7 @@ LABEL authors="dell"
 WORKDIR /app
 
 # 将打包的jar文件复制到容器的/app目录下
-COPY ./sky-server/target/sky-application.jar /app
+COPY ./sky-common/target/sky-common-1.0-SNAPSHOT.jar /app
 
 # 容器对外暴露的端口号，需要和你的Spring Boot应用一致
 EXPOSE 8080
